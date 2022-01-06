@@ -174,14 +174,13 @@ function esPrimo(numero) {
     return false;
   else
     return false;*/
-    
-    for(var i = 2; i < numero; i++)
-    {
-      if(numero%i == 0)
-        return false;
-       
+    if (numero === 0 || numero === 1 || numero === 4 )  return false;
+    for (let x = 2; x < numero / 2; x++) {
+        if (numero % x === 0) return false;
     }
+    // Si no se pudo dividir por ninguno de los de arriba, sí es primo
     return true;
+    
 }
 
 function esVerdadero(valor){
@@ -189,16 +188,19 @@ function esVerdadero(valor){
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
 
-  if(valor === true)
-    return "Soy verdadero";
-  else
-    return "Soy falso";
+  return valor === true ? "Soy verdadero" : "Soy falso"; 
 }
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
-  //Escribe tu código aquí   
+  //Escribe tu código aquí
+  
+  const table = []
+  for (let i = 0; i < 11; i += 1){
+    table.push(6 * i) 
+  }
+  return table;
   
 }
 
@@ -217,6 +219,14 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+    let count = 0; 
+    do{
+        numero += 5;
+        count += 1;
+
+    }
+    while (count < 8)
+      return numero;  
 }
 
 
